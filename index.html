@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulier</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--3 invoervelden van verschillende types.-->
+    <!--Elk eigen validation check (wat, hoe en wanneer?).-->
+    <!--Wat wordt de feedback naar de gebruiker toe?-->
+    <form action="">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required />
+      <p id="username-msg"></p>
+
+      <label for="email">E-mail:</label>
+      <input type="email" id="email" required />
+      <p id="email-msg"></p>
+
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        required
+      />
+      <p id="password-msg"></p>
+      <br /><br /><br />
+      <button id="checkBtn">Check</button>
+
+      <div id="message">
+        <h5>Password must contain the following:</h5>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+      </div>
+    </form>
+    <script src="validation.js"></script>
+  </body>
+</html>

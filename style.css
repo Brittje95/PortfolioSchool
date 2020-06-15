@@ -1,0 +1,59 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: lightsteelblue;
+}
+
+form {
+  width: 30%;
+  margin: 0 auto;
+  padding: 5%;
+}
+
+form > * {
+  display: block;
+  width: 100%;
+  font-size: 2em;
+}
+
+form > p {
+  font-size: 10px;
+  font-style: italic;
+}
+
+#message {
+  display: none;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#message p {
+  padding: 10px 35px;
+  font-size: 18px;
+}
+
+/* Groen vinkje */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Rode X */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
