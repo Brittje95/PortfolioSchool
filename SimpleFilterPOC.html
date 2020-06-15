@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li class="list semester">Semester</li>
+      <li class="list gate">Gate</li>
+      <li class="list sprint">Sprint</li>
+    </ul>
+
+    <button id="button">Filter</button>
+
+    <ul id="filter">
+      <p>Gefilterde content:</p>
+    </ul>
+
+    <script>
+      let items = document.getElementsByClassName("list");
+      console.log(items);
+
+      let itemsArray = Array.from(items);
+      console.log(itemsArray);
+
+      let result = itemsArray.filter((filterSemester) =>
+        filterSemester.className.includes("semester")
+      );
+      console.log(result);
+
+      document
+        .getElementById("button")
+        .addEventListener("click", buttonFunction);
+
+      function buttonFunction() {
+        document.getElementById("filter").appendChild(result[0]);
+      }
+
+      //Zoeken op add eventhandler
+      //Array map ipv filter gebruiken. If statement, hangt element wat ik zoek eraan? Dan visible, anders hidden.
+    </script>
+  </body>
+</html>

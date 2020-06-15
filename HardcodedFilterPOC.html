@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="filter">
+      <li class="list semester" style="display: block;">Semester</li>
+      <li class="list gate" style="display: block;">Gate</li>
+      <li class="list sprint" style="display: block;">Sprint</li>
+    </ul>
+
+    <!--class filterButton-->
+    <button id="button" class="filterButton" data-filter-name="semester">
+      Semester 2
+    </button>
+    <button id="buttonS4" class="filterButton" data-filter-name="semester4">
+      Semester 4
+    </button>
+    <button id="buttonG1" class="filterButton" data-filter-name="gate1">
+      Gate 1
+    </button>
+    <button id="buttonG2" class="filterButton" data-filter-name="gate2">
+      Gate 2
+    </button>
+    <button id="buttonG3" class="filterButton" data-filter-name="gate3">
+      Gate 3
+    </button>
+    <button id="buttonSp1" class="filterButton" data-filter-name="sprint1">
+      Sprint 1
+    </button>
+    <button id="buttonSp2" class="filterButton" data-filter-name="sprint2">
+      Sprint 2
+    </button>
+    <button id="buttonSp3" class="filterButton" data-filter-name="sprint3">
+      Sprint 3
+    </button>
+    <button id="buttonSp4" class="filterButton" data-filter-name="sprint4">
+      Sprint 4
+    </button>
+    <button id="buttonSp5" class="filterButton" data-filter-name="sprint5">
+      Sprint 5
+    </button>
+
+    <script>
+      function filterOpdrachten(keywords) {
+        //Alle opdrachten ophalen.
+        let items = document.getElementsByClassName("list");
+        //console.log(items);
+
+        // collectie naar array converteren i.v.m. map functie.
+        let itemsArray = Array.from(items);
+        console.log(itemsArray);
+
+        //Alle opdrachten filteren.
+        let result = itemsArray.map((element) => {
+          if (element.className.includes(keywords)) {
+            element.style.display = "block";
+          } else {
+            element.style.display = "none";
+          }
+          return element;
+        });
+      }
+
+      function addFilterEventListeners() {
+        //array met buttens, ophalen met getElementsbyClassName
+        let buttons = document.getElementsByClassName("filterButton");
+        console.log(buttons);
+        // Er doorheen loopen met foreach. Dus button uit array halen.
+        // EventListener toevoegen (zie hieronder)
+        //add eventlistener functie
+        document.getElementById("button").addEventListener("click", (e) => {
+          filterOpdrachten(e.srcElement.dataset.filterName);
+          console.log(e.srcElement.dataset.filterName);
+        });
+      }
+
+      addFilterEventListeners();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="button">Filter</button>
+    <script>
+      const box = document.createElement("div");
+      box.className = "semester";
+
+      const array1 = [
+        { display: "block", class: "semester" },
+        { display: "block", class: "banaan" },
+        { display: "block", class: "auto" },
+        { display: "block", class: "fiets" },
+      ];
+
+      // pass a function to map
+      const map1 = array1.map((element) => {
+        if (element.class != "semester") {
+          element.display = "none";
+        }
+        return element;
+      });
+
+      document.getElementById("button").addEventListener("click", filter);
+
+      function filter() {
+        if (classlist.contains("semester")) {
+          console.log("hello world");
+        }
+      }
+
+      console.log(map1);
+      //classlist contains -> controleren of list bepaalde class heeft. https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+      //element.style.display werkt niet, Luuk vragen waarom niet!
+    </script>
+  </body>
+</html>
