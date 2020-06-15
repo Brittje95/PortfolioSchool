@@ -1,0 +1,3 @@
+<?php foreach ($selectdata as $selectrow): ?>
+                                <option value="<?=$selectrow["vakid"]?>"><?=$selectrow["naam"]?></option>
+                            <?php endforeach ?>
