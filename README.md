@@ -1,6 +1,6 @@
 # Portfolio school
 
-### Version 1.7
+### Version 2
 
 Dit is mijn portfolio voor semester 4 van de opleiding ICT & Media Design aan de Fontys Hogeschool in Eindhoven. Dit portfolio bevat alle bewijslast om aan te tonen dat ik alle leerdoelen van semester 4 gehaald heb.
 
